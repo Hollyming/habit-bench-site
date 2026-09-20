@@ -1,0 +1,148 @@
+{
+  "description": "Provenance for HABIT-Bench website numerical content. No raw user histories or private annotations are included.",
+  "writing_repository": {
+    "commit": "f52bc1643c2b95c57d72588df50cb4f319c8c280",
+    "files": {
+      "iclr2027_conference.tex": "39529ddb3c356ac509fbc1f6740cf7070d09e299c294015654389fb967505d83",
+      "sec/3_habit_bench.tex": "bfe5f060356562d225afcd94e108862a0524ee6c7be160b093168d31db62ef43",
+      "sec/4_experiments.tex": "fc44ac143f54ea8d8a3ca5c4728f9440a0b3dd911aaa58d5644d166af0264c37",
+      "tables/dataset_overview.tex": "e3275505d1f26829890b75f1b38754677ec28084893cd1b02256aff5c6f7dab7",
+      "tables/method_provenance.tex": "cf6a76b3484d64b1962d815e83693a8018370fb23b94d3d1d8169bc88b8d98b6",
+      "paper_audit/dataset_manifest.csv": "bd7fb090a26fecbfe5443725d37c5b4e8ee2bc39d622f3e79a5e51cfc21d8006"
+    }
+  },
+  "reference_repository": {
+    "commit": "242a1bf61181acd853fd281ac13810ec0b52a9a4",
+    "result_document": "docs/main_experiment_results_current.md",
+    "sha256": "c96ca6aed0739c8b6fbf12944502ac6f20f0631d1c71856d8a254641c4bd8c2e",
+    "heading": "## Qwen3-235B-A22B 主实验 Acc（四域 × 17 项，含诊断对照）",
+    "source_lines": [
+      {
+        "method": "No-Memory",
+        "line": 237
+      },
+      {
+        "method": "Full-Memory",
+        "line": 238
+      },
+      {
+        "method": "Recency-5",
+        "line": 239
+      },
+      {
+        "method": "Recency-10",
+        "line": 240
+      },
+      {
+        "method": "BM25-RAG",
+        "line": 241
+      },
+      {
+        "method": "Dense-RAG",
+        "line": 242
+      },
+      {
+        "method": "Temporal Hybrid-RAG",
+        "line": 243
+      },
+      {
+        "method": "Mem0",
+        "line": 244
+      },
+      {
+        "method": "A-MEM",
+        "line": 245
+      },
+      {
+        "method": "MemOS",
+        "line": 246
+      },
+      {
+        "method": "MemRL",
+        "line": 247
+      },
+      {
+        "method": "LightMem",
+        "line": 248
+      },
+      {
+        "method": "Letta",
+        "line": 249
+      },
+      {
+        "method": "MIRIX",
+        "line": 250
+      },
+      {
+        "method": "SeCom",
+        "line": 251
+      }
+    ]
+  },
+  "datasets": [
+    {
+      "domain": "food",
+      "package": "domain/food/food_habit_lifelines_final_check",
+      "lifecycle": "active_candidate",
+      "domain_filter": null,
+      "public_sha256": {
+        "lifelines": "d9feee413db8d5f2621683697f3d161be98b614c4316e3914ceb5c28206d6fa7",
+        "probes": "f96348b5546f8c622cec32eb9bca62011a9562d8b89668d15b6d93bafa284f25"
+      }
+    },
+    {
+      "domain": "travel",
+      "package": "domain/travel/release_candidate_v16_postrepair_repaired_r4",
+      "lifecycle": "active_candidate",
+      "domain_filter": null,
+      "public_sha256": {
+        "lifelines": "a36b27465a280804f4103b2ad28266bc6f27d4a935754e5aed1b9b5f82d1352b",
+        "probes": "a89d872554bfaa35b15c683e71a30bb1ebc45ea81177e737c6935a44987a4651"
+      }
+    },
+    {
+      "domain": "finance",
+      "package": "domain/finance-software/habit_bench_multidogo_finance_software_release_gated_v1_4",
+      "lifecycle": "active_candidate",
+      "domain_filter": "finance",
+      "public_sha256": {
+        "lifelines": "0c38a8a5eadc258dcf2a728e122fa9fddb943b533da4ef5be56c64926f14c320",
+        "probes": "0e2f38e2cfa40bd429d06f334331b8c8050bf8e3ce6d3ffe94875e40b2e2398e"
+      }
+    },
+    {
+      "domain": "software",
+      "package": "domain/finance-software/habit_bench_multidogo_finance_software_release_gated_v1_4",
+      "lifecycle": "active_candidate",
+      "domain_filter": "software",
+      "public_sha256": {
+        "lifelines": "0c38a8a5eadc258dcf2a728e122fa9fddb943b533da4ef5be56c64926f14c320",
+        "probes": "0e2f38e2cfa40bd429d06f334331b8c8050bf8e3ce6d3ffe94875e40b2e2398e"
+      }
+    }
+  ],
+  "dataset_statistics": {
+    "status": "manifest-verified; independently recounted during website audit",
+    "manifest": "paper_audit/dataset_manifest.csv",
+    "table": "tables/dataset_overview.tex:8-13"
+  },
+  "experiment_results": {
+    "status": "document-reported",
+    "metric": "Per-domain exact-choice accuracy (%)",
+    "versions": "Food final; Finance v1.4; Software v1.4; Travel v16",
+    "displayed": "All eight memory methods, five session-retrieval baselines, and two evaluator controls from this comparison. Private diagnostic oracles are outside this display.",
+    "limitations": [
+      "Not independently recomputed for this website.",
+      "Method-specific recorded context budgets.",
+      "Official-code adapters and official-source adaptations are not upstream-native end-to-end evaluations.",
+      "25% is a theoretical uniform-choice reference, not a significance threshold.",
+      "No matched transfer-gap claim is established here."
+    ]
+  },
+  "illustration": {
+    "status": "Newly authored conceptual example; not an evaluation item or private gold annotation"
+  },
+  "release": {
+    "status": "Project website; public paper and dataset release links have not been established."
+  }
+}

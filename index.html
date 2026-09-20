@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1115">
+  <meta name="description" content="HABIT-Bench evaluates whether agent memory can induce latent habits from longitudinal weak evidence and apply them in the right context.">
+  <title>HABIT-Bench — Beyond recall. Toward habit.</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b1115'/%3E%3Cpath d='M18 15v34m28-34v34M18 32h28' stroke='%23baf591' stroke-width='8'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./data.js" defer></script>
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="HABIT-Bench home"><span class="brand-mark" aria-hidden="true">h<span>·</span></span> HABIT<span class="brand-light">-Bench</span></a>
+    <nav aria-label="Main navigation"><a href="#benchmark">Benchmark</a><a href="#protocol">Protocol</a><a href="#findings">Findings</a></nav>
+    <a class="header-link" href="#resources">Resources <span aria-hidden="true">↗</span></a>
+  </header>
+  <main id="main">
+    <section class="hero section-shell" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-line"></span> A benchmark for long-term agent memory</p>
+        <h1 id="hero-title">Beyond recall.<br>Toward <em>habit.</em></h1>
+        <p class="hero-summary">An agent can remember what you did.<br> Can it infer what to do next—and when the pattern no longer applies?</p>
+        <p class="hero-description">HABIT-Bench evaluates habit induction from longitudinal weak evidence, with context, exceptions, and change built into the task.</p>
+        <div class="hero-actions"><a class="button primary" href="#benchmark">Explore the benchmark <span aria-hidden="true">↗</span></a><a class="text-link" href="#protocol">How it works <span aria-hidden="true">↓</span></a></div>
+        <p class="paper-title">Evaluating Habit Induction from Longitudinal<br class="desktop-break"> Weak Evidence in Agent Memory</p>
+      </div>
+      <div class="habit-lab" aria-label="Interactive illustration of habit application">
+        <div class="lab-heading"><span class="eyebrow">From history to behavior</span><span class="lab-note">Illustrative example</span></div>
+        <div class="history-label"><span>01 / OBSERVE</span><span>Chronological history</span></div>
+        <ol class="evidence-timeline">
+          <li><span class="session-label">Session 01</span><p>“A mild bowl for my solo lunch.”</p><span class="evidence-tag">weekday</span></li>
+          <li><span class="session-label">Session 02</span><p>“The non-spicy lunch again, please.”</p><span class="evidence-tag">weekday</span></li>
+          <li><span class="session-label">Session 03</span><p>“Lunch for one. Keep it mild.”</p><span class="evidence-tag">weekday</span></li>
+        </ol>
+        <div class="inference-link" aria-hidden="true"><span></span>↓<span></span></div>
+        <div class="latent-state"><span class="micro-label">02 / INDUCE A LATENT HABIT</span><p>Mild food <span>for solo weekday lunches</span></p><div class="state-tags"><span>repeated evidence</span><span>limited scope</span></div></div>
+        <div class="scenario-control"><span class="micro-label">03 / CHANGE THE CONTEXT</span><div class="segmented" role="group" aria-label="Example context"><button type="button" data-scenario="apply" aria-pressed="true">Familiar</button><button type="button" data-scenario="boundary" aria-pressed="false">New context</button><button type="button" data-scenario="exception" aria-pressed="false">Exception</button></div></div>
+        <div class="decision" id="decision" aria-live="polite"><p class="current-request">“My usual solo lunch this Tuesday?”</p><div class="decision-title"><span class="decision-symbol" aria-hidden="true">↳</span><strong>Apply the habit</strong></div><p class="decision-explanation">Choose a mild option. The current request matches the pattern’s scope.</p></div>
+        <p class="lab-caption">Remember the pattern. Retain its conditions.</p>
+      </div>
+    </section>
+    <section class="stats section-shell" aria-label="Dataset at a glance"><div><strong>114</strong><span>Synthetic users</span></div><div><strong>37,152</strong><span>Chronological sessions</span></div><div><strong>3,328</strong><span>Four-choice probes</span></div><div><strong>4</strong><span>Everyday domains</span></div></section>
+    <section class="section-shell benchmark-section" id="benchmark">
+      <div class="section-heading"><p class="eyebrow">01 / The benchmark</p><h2>Small signals.<br><em>Long histories.</em></h2></div>
+      <div class="intro-copy"><p>Useful personalization starts with a pattern the user may never state as a rule.</p><p>HABIT-Bench combines dialogue-derived task seeds with controlled latent habit graphs to construct <strong>real-prompt-seeded synthetic lifelines</strong>. Each probe asks the agent to choose a context-appropriate action from four alternatives.</p><p class="muted">The histories are synthetic—not longitudinal logs of real users. Each probe has one deterministic gold choice.</p></div>
+      <div class="domain-grid" id="domain-grid"></div>
+      <div class="capabilities-header"><h3>What does a useful memory need to do?</h3><p>Diagnostic coverage follows each domain’s annotations.</p></div>
+      <div class="capability-grid">
+        <article><span class="capability-number">01</span><h4>Induce a habit</h4><p>Combine repeated weak observations into a supported behavioral default.</p></article>
+        <article><span class="capability-number">02</span><h4>Respect the boundary</h4><p>Recognize when a familiar pattern falls outside the current context.</p></article>
+        <article><span class="capability-number">03</span><h4>Retain exceptions</h4><p>Apply a local override without turning it into a permanent preference.</p></article>
+        <article><span class="capability-number">04</span><h4>Track change</h4><p>Resolve which habit state was valid at the relevant point in time.</p></article>
+        <article><span class="capability-number">05</span><h4>Check the evidence</h4><p>Distinguish endorsed behavior from suggestions and nonbinding evidence.</p></article>
+        <article><span class="capability-number">06</span><h4>Personalize selectively</h4><p>Withhold unsupported personalization while keeping error types distinct.</p></article>
+      </div>
+    </section>
+    <section class="protocol-section" id="protocol"><div class="section-shell">
+      <div class="section-heading"><p class="eyebrow">02 / Evaluation protocol</p><h2>A shared decision.<br><em>A traceable path.</em></h2></div>
+      <p class="protocol-lede">Memory methods build and retrieve their own context. A shared answerer within each comparison makes the final choice.</p>
+      <div class="pipeline"><article><span class="step">01</span><h3>Read the lifeline</h3><p>Ingest visible sessions chronologically, with independent memory for each user.</p><code>history ≤ probe cutoff</code></article><article><span class="step">02</span><h3>Build memory</h3><p>Construct and retrieve method-native memory under recorded context budgets.</p><code>memory_context</code></article><article><span class="step">03</span><h3>Choose an action</h3><p>Combine memory, the current request, and four choices in a shared answerer.</p><code>choice_id ∈ {A, B, C, D}</code></article><article><span class="step">04</span><h3>Localize failure</h3><p>Score exact choices and inspect evidence access, context, time, and provenance.</p><code>private scorer</code></article></div>
+      <div class="protocol-foot"><span>Exact-choice scoring</span><span>User-isolated state</span><span>No future history</span><span>Gold annotations stay private to the evaluator</span></div>
+    </div></section>
+    <section class="section-shell findings-section" id="findings">
+      <div class="section-heading"><p class="eyebrow">03 / Experimental findings</p><h2>Remembering evidence<br>is <em>only the beginning.</em></h2></div>
+      <p class="findings-lede">Explore the main comparison with Qwen3-235B-A22B. Accuracy measures the final four-choice decision; the dashed line marks the 25% uniform-choice reference.</p>
+      <div id="results-panel" class="results-panel"></div>
+      <p class="results-note">Document-reported results from the current experiment record. These values have not been independently recomputed for this website. Methods use recorded, method-specific context budgets.</p>
+    </section>
+    <section class="resources-section section-shell" id="resources"><div><p class="eyebrow">04 / Research resources</p><h2>Study the memory.<br><em>Understand the behavior.</em></h2><p class="resource-copy">HABIT-Bench: Evaluating Habit Induction from Longitudinal Weak Evidence in Agent Memory.</p></div><div class="resource-list"><a href="https://github.com/Hollyming/habit-bench" target="_blank" rel="noopener noreferrer"><span><strong>Code & evaluation</strong><small>Private repository · access required</small></span><span aria-hidden="true">↗</span></a><a href="https://github.com/Hollyming/habit_bench_iclr27" target="_blank" rel="noopener noreferrer"><span><strong>Manuscript source</strong><small>Private working repository · access required</small></span><span aria-hidden="true">↗</span></a><div class="resource-status"><span><strong>Paper & dataset release</strong><small>Public release links will be added when available.</small></span><span class="status-label">In preparation</span></div></div></section>
+  </main>
+  <footer class="site-footer section-shell"><a class="brand" href="#">HABIT<span class="brand-light">-Bench</span></a><p>Longitudinal evidence. Contextual behavior.</p><a href="./evidence.json">Evidence & provenance <span aria-hidden="true">↗</span></a></footer>
+</body>
+</html>
