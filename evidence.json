@@ -143,11 +143,12 @@
     "status": "Newly authored conceptual example; not an evaluation item or private gold annotation"
   },
   "release": {
-    "status": "Public project website with arXiv paper and user-designated anonymous code repository.",
+    "status": "Public project website with arXiv paper, Hugging Face dataset, and user-designated anonymous code repository.",
     "paper": "https://arxiv.org/pdf/2610.24520",
     "verified_paper_version": "2610.24520v2",
     "code": "https://anonymous.4open.science/r/iclr27_hb_anonymous/README.md",
-    "figure_sources": "figure-provenance.json"
+    "figure_sources": "figure-provenance.json",
+    "dataset": "https://huggingface.co/datasets/hollyming/HABIT-Bench"
   },
   "publication_crosscheck": {
     "paper_version": "2610.24520v2",

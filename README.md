@@ -2,7 +2,7 @@
 
 Public project website for **HABIT-Bench: Evaluating Habit Induction from Longitudinal Weak Evidence in Agent Memory**.
 
-[Website](https://hollyming.github.io/habit-bench-site/) · [Paper](https://arxiv.org/pdf/2610.24520) · [Code & evaluation](https://anonymous.4open.science/r/iclr27_hb_anonymous/README.md)
+[Website](https://hollyming.github.io/habit-bench-site/) · [Paper](https://arxiv.org/pdf/2610.24520) · [Code & evaluation](https://anonymous.4open.science/r/iclr27_hb_anonymous/README.md) · [Dataset](https://huggingface.co/datasets/hollyming/HABIT-Bench)
 
 ## Local preview
 
@@ -26,7 +26,7 @@ GitHub Actions publishes `main` at https://hollyming.github.io/habit-bench-site/
 
 ## Files
 
-- `index.html`: public page structure, paper and code links.
+- `index.html`: public page structure, paper, code, and dataset links.
 - `styles.css`: responsive visual design.
 - `app.js`: scenario controls, result filters, and accessible figure dialogs.
 - `data.js`: generated dataset statistics and experiment values.
