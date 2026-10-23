@@ -3,10 +3,19 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0b1115">
-  <meta name="description" content="HABIT-Bench evaluates whether agent memory can induce latent habits from longitudinal weak evidence and apply them in the right context.">
-  <title>HABIT-Bench — Beyond recall. Toward habit.</title>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b1115'/%3E%3Cpath d='M18 15v34m28-34v34M18 32h28' stroke='%23baf591' stroke-width='8'/%3E%3C/svg%3E">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="HABIT-Bench evaluates habit induction from longitudinal weak evidence in agent memory. Explore the benchmark, paper, and experimental findings.">
+  <meta property="og:title" content="HABIT-Bench | Beyond recall. Toward habit.">
+  <meta property="og:description" content="Can an agent infer a habit from repeated weak evidence—and know when it applies? A benchmark across 114 synthetic users, 37,152 sessions, and four domains.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hollyming.github.io/habit-bench-site/">
+  <meta property="og:image" content="https://hollyming.github.io/habit-bench-site/assets/figures/framework.png">
+  <title>HABIT-Bench | Beyond recall. Toward habit.</title>
+  <link rel="canonical" href="https://hollyming.github.io/habit-bench-site/">
+  <link rel="icon" type="image/png" href="./assets/lumia-logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;550;600;650;700&family=Manrope:wght@400;500;600;650;700;750;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles.css">
   <script src="./data.js" defer></script>
   <script src="./app.js" defer></script>
@@ -14,64 +23,79 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
-    <a class="brand" href="#" aria-label="HABIT-Bench home"><span class="brand-mark" aria-hidden="true">h<span>·</span></span> HABIT<span class="brand-light">-Bench</span></a>
-    <nav aria-label="Main navigation"><a href="#benchmark">Benchmark</a><a href="#protocol">Protocol</a><a href="#findings">Findings</a></nav>
-    <a class="header-link" href="#resources">Resources <span aria-hidden="true">↗</span></a>
+    <div class="header-inner">
+      <a class="brand" href="#" aria-label="HABIT-Bench home"><img src="./assets/lumia-logo.png" width="58" height="58" alt="LUMIA"><span>HABIT<span class="brand-light">-Bench</span></span></a>
+      <nav aria-label="Main navigation"><a href="#overview">Overview</a><a href="#benchmark">Benchmark</a><a href="#findings">Results</a></nav>
+      <a class="header-link" href="https://arxiv.org/pdf/2610.24520" target="_blank" rel="noopener noreferrer">Read the paper <span aria-hidden="true">↗</span></a>
+    </div>
   </header>
   <main id="main">
     <section class="hero section-shell" aria-labelledby="hero-title">
-      <div class="hero-copy">
-        <p class="eyebrow"><span class="eyebrow-line"></span> A benchmark for long-term agent memory</p>
-        <h1 id="hero-title">Beyond recall.<br>Toward <em>habit.</em></h1>
-        <p class="hero-summary">An agent can remember what you did.<br> Can it infer what to do next—and when the pattern no longer applies?</p>
-        <p class="hero-description">HABIT-Bench evaluates habit induction from longitudinal weak evidence, with context, exceptions, and change built into the task.</p>
-        <div class="hero-actions"><a class="button primary" href="#benchmark">Explore the benchmark <span aria-hidden="true">↗</span></a><a class="text-link" href="#protocol">How it works <span aria-hidden="true">↓</span></a></div>
-        <p class="paper-title">Evaluating Habit Induction from Longitudinal<br class="desktop-break"> Weak Evidence in Agent Memory</p>
+      <p class="eyebrow hero-eyebrow"><span class="status-dot" aria-hidden="true"></span> A benchmark for long-term agent memory</p>
+      <h1 id="hero-title">HABIT<span>-Bench</span><span class="title-dot" aria-hidden="true">.</span></h1>
+      <p class="hero-title">Evaluating Habit Induction from Longitudinal<br class="desktop-break"> Weak Evidence in Agent Memory</p>
+      <p class="hero-summary">Beyond remembering what happened.<br>Understanding the pattern—and when it applies.</p>
+      <div class="hero-actions">
+        <a class="button primary" href="https://arxiv.org/pdf/2610.24520" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6 3h8l4 4v14H6zM14 3v5h4M9 12h6M9 16h6"/></svg> Read the paper <span aria-hidden="true">↗</span></a>
+        <a class="button secondary" href="https://anonymous.4open.science/r/iclr27_hb_anonymous/README.md" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="m8 6-6 6 6 6m8-12 6 6-6 6M14 3l-4 18"/></svg> Explore the code <span aria-hidden="true">↗</span></a>
       </div>
-      <div class="habit-lab" aria-label="Interactive illustration of habit application">
-        <div class="lab-heading"><span class="eyebrow">From history to behavior</span><span class="lab-note">Illustrative example</span></div>
-        <div class="history-label"><span>01 / OBSERVE</span><span>Chronological history</span></div>
-        <ol class="evidence-timeline">
-          <li><span class="session-label">Session 01</span><p>“A mild bowl for my solo lunch.”</p><span class="evidence-tag">weekday</span></li>
-          <li><span class="session-label">Session 02</span><p>“The non-spicy lunch again, please.”</p><span class="evidence-tag">weekday</span></li>
-          <li><span class="session-label">Session 03</span><p>“Lunch for one. Keep it mild.”</p><span class="evidence-tag">weekday</span></li>
-        </ol>
-        <div class="inference-link" aria-hidden="true"><span></span>↓<span></span></div>
-        <div class="latent-state"><span class="micro-label">02 / INDUCE A LATENT HABIT</span><p>Mild food <span>for solo weekday lunches</span></p><div class="state-tags"><span>repeated evidence</span><span>limited scope</span></div></div>
-        <div class="scenario-control"><span class="micro-label">03 / CHANGE THE CONTEXT</span><div class="segmented" role="group" aria-label="Example context"><button type="button" data-scenario="apply" aria-pressed="true">Familiar</button><button type="button" data-scenario="boundary" aria-pressed="false">New context</button><button type="button" data-scenario="exception" aria-pressed="false">Exception</button></div></div>
-        <div class="decision" id="decision" aria-live="polite"><p class="current-request">“My usual solo lunch this Tuesday?”</p><div class="decision-title"><span class="decision-symbol" aria-hidden="true">↳</span><strong>Apply the habit</strong></div><p class="decision-explanation">Choose a mild option. The current request matches the pattern’s scope.</p></div>
-        <p class="lab-caption">Remember the pattern. Retain its conditions.</p>
-      </div>
+      <div class="hero-sequence" aria-label="From repeated evidence to context-appropriate action"><span>Repeated weak evidence</span><span aria-hidden="true">→</span><span>Latent habit</span><span aria-hidden="true">→</span><span>Contextual action</span></div>
     </section>
     <section class="stats section-shell" aria-label="Dataset at a glance"><div><strong>114</strong><span>Synthetic users</span></div><div><strong>37,152</strong><span>Chronological sessions</span></div><div><strong>3,328</strong><span>Four-choice probes</span></div><div><strong>4</strong><span>Everyday domains</span></div></section>
-    <section class="section-shell benchmark-section" id="benchmark">
-      <div class="section-heading"><p class="eyebrow">01 / The benchmark</p><h2>Small signals.<br><em>Long histories.</em></h2></div>
-      <div class="intro-copy"><p>Useful personalization starts with a pattern the user may never state as a rule.</p><p>HABIT-Bench combines dialogue-derived task seeds with controlled latent habit graphs to construct <strong>real-prompt-seeded synthetic lifelines</strong>. Each probe asks the agent to choose a context-appropriate action from four alternatives.</p><p class="muted">The histories are synthetic—not longitudinal logs of real users. Each probe has one deterministic gold choice.</p></div>
+
+    <section class="overview-section section-shell" id="overview" aria-labelledby="overview-title">
+      <div class="section-heading split-heading"><div><p class="eyebrow">01 / The idea</p><h2 id="overview-title">Memory should capture<br><span>more than a fact.</span></h2></div><p>A habit is rarely given as an explicit rule. HABIT-Bench asks whether an agent can infer a <strong>context-gated behavioral regularity</strong> from repeated weak evidence, then apply it selectively.</p></div>
+      <figure class="paper-figure framework-figure">
+        <div class="figure-topline"><span class="figure-label">The HABIT-Bench framework</span><button class="figure-expand" type="button" data-figure="framework" aria-label="Enlarge the HABIT-Bench framework">Enlarge <span aria-hidden="true">↗</span></button></div>
+        <button class="figure-image-button" type="button" data-figure="framework" aria-label="Open framework figure at full size"><img src="./assets/figures/framework.png" alt="HABIT-Bench framework: explicit memory versus latent habit induction, construction of synthetic lifelines from task seeds and habit graphs, and evaluation through a shared answerer." width="4884" height="3900" loading="lazy"></button>
+        <figcaption><span>Figure 1</span> From task-oriented prompt seeds and latent habit graphs to synthetic lifelines and context-sensitive decisions. <a href="https://arxiv.org/pdf/2610.24520#page=4" target="_blank" rel="noopener noreferrer">View in paper ↗</a></figcaption>
+      </figure>
+      <div class="protocol-strip" aria-label="Evaluation protocol"><div><span>01</span><strong>Read the history</strong><p>Sessions arrive chronologically.</p></div><div><span>02</span><strong>Build memory</strong><p>Each method builds its own context.</p></div><div><span>03</span><strong>Choose an action</strong><p>A shared answerer selects a choice.</p></div><div><span>04</span><strong>Diagnose the error</strong><p>Trace evidence, scope, and time.</p></div></div>
+    </section>
+
+    <section class="benchmark-band" id="benchmark" aria-labelledby="benchmark-title"><div class="section-shell">
+      <div class="section-heading split-heading"><div><p class="eyebrow">02 / Inside the benchmark</p><h2 id="benchmark-title">Small signals.<br><span>Long histories.</span></h2></div><div class="section-intro"><p>Four everyday domains. Repeated decisions. Changing circumstances.</p><p>Dialogue-derived task seeds ground <strong>real-prompt-seeded synthetic lifelines</strong>. Every probe has four choices and one deterministic gold answer.</p></div></div>
       <div class="domain-grid" id="domain-grid"></div>
-      <div class="capabilities-header"><h3>What does a useful memory need to do?</h3><p>Diagnostic coverage follows each domain’s annotations.</p></div>
+      <div class="example-layout">
+        <div class="example-copy"><p class="eyebrow">A closer look</p><h3>One habit.<br> Three contexts.</h3><p>Repeated mild-food orders can support a default for solo weekday lunches. That default still needs a boundary.</p><p class="example-instruction"><span aria-hidden="true">↳</span> Change the context to see the decision.</p><small>An illustrative example, not an evaluation item.</small></div>
+        <div class="habit-lab" aria-label="Interactive illustration of selective habit application">
+          <div class="lab-heading"><span class="micro-label">Observed across sessions</span><span class="lab-note">Food / weekday lunch</span></div>
+          <ol class="evidence-timeline"><li><span>01</span><p>“A mild bowl for my solo lunch.”</p></li><li><span>02</span><p>“The non-spicy lunch again, please.”</p></li><li><span>03</span><p>“Lunch for one. Keep it mild.”</p></li></ol>
+          <div class="latent-state"><span class="micro-label">Inferred habit</span><p>Mild food <span>for solo weekday lunches</span></p></div>
+          <div class="scenario-control"><div class="segmented" role="group" aria-label="Example context"><button type="button" data-scenario="apply" aria-pressed="true">Familiar context</button><button type="button" data-scenario="boundary" aria-pressed="false">New context</button><button type="button" data-scenario="exception" aria-pressed="false">Exception</button></div></div>
+          <div class="decision" id="decision" aria-live="polite"><p class="current-request">“My usual solo lunch this Tuesday?”</p><div class="decision-title"><span aria-hidden="true">↳</span><strong>Apply the habit</strong></div><p class="decision-explanation">Choose a mild option. The current request matches the pattern’s scope.</p></div>
+        </div>
+      </div>
+      <div class="capabilities-header"><h3>Six capabilities behind useful memory</h3><p>Diagnostic coverage follows each domain’s annotations.</p></div>
       <div class="capability-grid">
-        <article><span class="capability-number">01</span><h4>Induce a habit</h4><p>Combine repeated weak observations into a supported behavioral default.</p></article>
-        <article><span class="capability-number">02</span><h4>Respect the boundary</h4><p>Recognize when a familiar pattern falls outside the current context.</p></article>
-        <article><span class="capability-number">03</span><h4>Retain exceptions</h4><p>Apply a local override without turning it into a permanent preference.</p></article>
-        <article><span class="capability-number">04</span><h4>Track change</h4><p>Resolve which habit state was valid at the relevant point in time.</p></article>
-        <article><span class="capability-number">05</span><h4>Check the evidence</h4><p>Distinguish endorsed behavior from suggestions and nonbinding evidence.</p></article>
-        <article><span class="capability-number">06</span><h4>Personalize selectively</h4><p>Withhold unsupported personalization while keeping error types distinct.</p></article>
+        <article><span>01</span><div><h4>Habit induction</h4><p>Infer a supported default from repeated weak observations.</p></div></article>
+        <article><span>02</span><div><h4>Boundary calibration</h4><p>Recognize when a pattern does and does not apply.</p></div></article>
+        <article><span>03</span><div><h4>Exception retention</h4><p>Keep a local override from becoming a permanent rule.</p></div></article>
+        <article><span>04</span><div><h4>Temporal change</h4><p>Resolve which habit state is valid at the relevant time.</p></div></article>
+        <article><span>05</span><div><h4>Evidence provenance</h4><p>Separate endorsed behavior from nonbinding suggestions.</p></div></article>
+        <article><span>06</span><div><h4>Selective personalization</h4><p>Withhold unsupported assumptions about the user.</p></div></article>
+      </div>
+    </div></section>
+
+    <section class="section-shell findings-section" id="findings" aria-labelledby="findings-title">
+      <div class="section-heading split-heading"><div><p class="eyebrow">03 / Experimental findings</p><h2 id="findings-title">Remembering evidence<br><span>is only the beginning.</span></h2></div><p>Explore the Qwen3-235B-A22B comparison across all four domains. The paper also reports GLM-5.3-Flash results and diagnostic studies that examine where the process breaks down.</p></div>
+      <div id="results-panel" class="results-panel"></div>
+      <p class="results-note">Document-reported exact-choice accuracy. Methods use recorded, method-specific context budgets. See the <a href="https://arxiv.org/pdf/2610.24520#page=6" target="_blank" rel="noopener noreferrer">paper</a> for both model settings and the full evaluation.</p>
+      <div class="study-heading"><p class="eyebrow">A closer look at the results</p><h3>Scale, retrieval, and the cost of memory.</h3><p>Original figures from the paper. Select any figure to inspect it at full size.</p></div>
+      <figure class="paper-figure scaling-figure">
+        <div class="figure-topline"><div><span class="figure-label">Does a larger model solve habit induction?</span><span class="figure-subtitle">Five Qwen model settings · four-domain macro accuracy</span></div><button class="figure-expand" type="button" data-figure="scaling" aria-label="Enlarge model-size comparison">Enlarge <span aria-hidden="true">↗</span></button></div>
+        <button class="figure-image-button" type="button" data-figure="scaling" aria-label="Open model-size comparison at full size"><img src="./assets/figures/model-scaling.png" alt="Grouped bar chart of four-domain macro accuracy for memory methods and the Full Memory control across five Qwen model settings; the dashed line indicates 25 percent uniform random choice." width="3840" height="1005" loading="lazy"></button>
+        <figcaption><span>Figure 2</span> Both memory-stage and answer models vary. The 235B setting uses a revised reader protocol, so this comparison does not isolate parameter scale.</figcaption>
+      </figure>
+      <div class="study-grid">
+        <figure class="paper-figure"><div class="figure-topline"><div><span class="figure-label">Retrieval & ingestion sensitivity</span><span class="figure-subtitle">Qwen3-8B · 32 users · 954 probes</span></div><button class="figure-expand" type="button" data-figure="sensitivity" aria-label="Enlarge retrieval and ingestion sensitivity">↗</button></div><button class="figure-image-button" type="button" data-figure="sensitivity" aria-label="Open retrieval sensitivity figure at full size"><img src="./assets/figures/retrieval-sensitivity.png" alt="Retrieval top-k and ingestion-chunk ablations, reporting four-domain macro accuracy with 95 percent within-domain user-bootstrap intervals." width="2200" height="752" loading="lazy"></button><figcaption><span>Figure 3a</span> Retrieval top-k and ingestion-chunk ablations, with 95% within-domain user-bootstrap intervals.</figcaption></figure>
+        <figure class="paper-figure"><div class="figure-topline"><div><span class="figure-label">The cost of building memory</span><span class="figure-subtitle">Qwen3-8B · the same 32-user cohort</span></div><button class="figure-expand" type="button" data-figure="efficiency" aria-label="Enlarge memory cost analysis">↗</button></div><button class="figure-image-button" type="button" data-figure="efficiency" aria-label="Open memory cost figure at full size"><img src="./assets/figures/efficiency.png" alt="Cumulative memory build and query latency and LLM token usage across memory methods on a shared 32-user cohort." width="2200" height="828" loading="lazy"></button><figcaption><span>Figure 3b</span> Cumulative build/query latency and LLM tokens. Time is in hours/minutes; token counts use a logarithmic scale.</figcaption></figure>
       </div>
     </section>
-    <section class="protocol-section" id="protocol"><div class="section-shell">
-      <div class="section-heading"><p class="eyebrow">02 / Evaluation protocol</p><h2>A shared decision.<br><em>A traceable path.</em></h2></div>
-      <p class="protocol-lede">Memory methods build and retrieve their own context. A shared answerer within each comparison makes the final choice.</p>
-      <div class="pipeline"><article><span class="step">01</span><h3>Read the lifeline</h3><p>Ingest visible sessions chronologically, with independent memory for each user.</p><code>history ≤ probe cutoff</code></article><article><span class="step">02</span><h3>Build memory</h3><p>Construct and retrieve method-native memory under recorded context budgets.</p><code>memory_context</code></article><article><span class="step">03</span><h3>Choose an action</h3><p>Combine memory, the current request, and four choices in a shared answerer.</p><code>choice_id ∈ {A, B, C, D}</code></article><article><span class="step">04</span><h3>Localize failure</h3><p>Score exact choices and inspect evidence access, context, time, and provenance.</p><code>private scorer</code></article></div>
-      <div class="protocol-foot"><span>Exact-choice scoring</span><span>User-isolated state</span><span>No future history</span><span>Gold annotations stay private to the evaluator</span></div>
-    </div></section>
-    <section class="section-shell findings-section" id="findings">
-      <div class="section-heading"><p class="eyebrow">03 / Experimental findings</p><h2>Remembering evidence<br>is <em>only the beginning.</em></h2></div>
-      <p class="findings-lede">Explore the main comparison with Qwen3-235B-A22B. Accuracy measures the final four-choice decision; the dashed line marks the 25% uniform-choice reference.</p>
-      <div id="results-panel" class="results-panel"></div>
-      <p class="results-note">Document-reported results from the current experiment record. These values have not been independently recomputed for this website. Methods use recorded, method-specific context budgets.</p>
-    </section>
-    <section class="resources-section section-shell" id="resources"><div><p class="eyebrow">04 / Research resources</p><h2>Study the memory.<br><em>Understand the behavior.</em></h2><p class="resource-copy">HABIT-Bench: Evaluating Habit Induction from Longitudinal Weak Evidence in Agent Memory.</p></div><div class="resource-list"><a href="https://anonymous.4open.science/r/iclr27_hb_anonymous/README.md" target="_blank" rel="noopener noreferrer"><span><strong>Code & evaluation</strong><small>Anonymous code repository</small></span><span aria-hidden="true">↗</span></a><a href="https://github.com/Hollyming/habit_bench_iclr27" target="_blank" rel="noopener noreferrer"><span><strong>Manuscript source</strong><small>Private working repository · access required</small></span><span aria-hidden="true">↗</span></a><div class="resource-status"><span><strong>Paper & dataset release</strong><small>Public release links will be added when available.</small></span><span class="status-label">In preparation</span></div></div></section>
+
+    <section class="resources-section" id="resources" aria-labelledby="resources-title"><div class="section-shell resources-inner"><div><p class="eyebrow">Explore the research</p><h2 id="resources-title">From remembering<br> to understanding habits.</h2><p>Read the full study, explore the benchmark,<br class="desktop-break"> and examine the evaluation protocol.</p></div><div class="resource-list"><a href="https://arxiv.org/pdf/2610.24520" target="_blank" rel="noopener noreferrer"><span><small>01 / PAPER</small><strong>Read on arXiv</strong><span>Full paper, experiments & analysis</span></span><span class="resource-arrow" aria-hidden="true">↗</span></a><a href="https://anonymous.4open.science/r/iclr27_hb_anonymous/README.md" target="_blank" rel="noopener noreferrer"><span><small>02 / CODE</small><strong>Explore the benchmark</strong><span>Anonymous code & evaluation repository</span></span><span class="resource-arrow" aria-hidden="true">↗</span></a></div></div></section>
   </main>
-  <footer class="site-footer section-shell"><a class="brand" href="#">HABIT<span class="brand-light">-Bench</span></a><p>Longitudinal evidence. Contextual behavior.</p><a href="./evidence.json">Evidence & provenance <span aria-hidden="true">↗</span></a></footer>
+  <footer class="site-footer section-shell"><a class="footer-brand" href="#">HABIT-Bench<span>.</span></a><p>Longitudinal evidence. Contextual behavior.</p><div><a href="./evidence.json">Results provenance ↗</a><a href="./figure-provenance.json">Figure sources ↗</a></div></footer>
+  <dialog class="figure-dialog" id="figure-dialog" aria-labelledby="dialog-title"><div class="dialog-heading"><h2 id="dialog-title">Paper figure</h2><div><a id="figure-original" href="./assets/figures/framework.png" target="_blank" rel="noopener noreferrer">Open original ↗</a><button type="button" class="dialog-close" aria-label="Close enlarged figure">×</button></div></div><div class="dialog-image-wrap"><img id="dialog-image" alt=""></div><p id="dialog-caption"></p></dialog>
 </body>
 </html>

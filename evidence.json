@@ -128,7 +128,7 @@
   },
   "experiment_results": {
     "status": "document-reported",
-    "metric": "Per-domain exact-choice accuracy (%)",
+    "metric": "Per-domain exact-choice accuracy (%) and unweighted four-domain macro accuracy (%)",
     "versions": "Food final; Finance v1.4; Software v1.4; Travel v16",
     "displayed": "All eight memory methods, five session-retrieval baselines, and two evaluator controls from this comparison. Private diagnostic oracles are outside this display.",
     "limitations": [
@@ -143,6 +143,18 @@
     "status": "Newly authored conceptual example; not an evaluation item or private gold annotation"
   },
   "release": {
-    "status": "Project website; public paper and dataset release links have not been established."
+    "status": "Public project website with arXiv paper and user-designated anonymous code repository.",
+    "paper": "https://arxiv.org/pdf/2610.24520",
+    "verified_paper_version": "2610.24520v2",
+    "code": "https://anonymous.4open.science/r/iclr27_hb_anonymous/README.md",
+    "figure_sources": "figure-provenance.json"
+  },
+  "publication_crosscheck": {
+    "paper_version": "2610.24520v2",
+    "source_url": "https://arxiv.org/src/2610.24520v2",
+    "table": "tables/dual_model_results.tex",
+    "table_sha256": "de899085110b06a82e4a5a906f5a07c6ff23897ede8631359f473db3fe6e45d9",
+    "scope": "All 15 displayed non-oracle Qwen3-235B-A22B rows, including four-domain macro averages, matched against the published table. The interactive chart displays the Qwen subset, not the GLM comparison.",
+    "status": "document-reported; cross-checked against published table, not raw-recomputed"
   }
 }

@@ -1,0 +1,189 @@
+{
+  "schema_version": 1,
+  "paper_url": "https://arxiv.org/pdf/2610.24520",
+  "paper_version": "2610.24520v2",
+  "arxiv_source": {
+    "url": "https://arxiv.org/src/2610.24520v2",
+    "archive_sha256": "2c99bb69ea90f669ee2d6b41b6566a22dbeaec701661873d0544f3a49b775dcc"
+  },
+  "source_repository": "HABIT-Bench writing repository",
+  "source_commit": "2d88ad2cdec0cb99bcb8ffbd4ca97035c9db080b",
+  "import_script": "scripts/import_website_figures.py",
+  "provenance_scope": "Faithful display copies of arXiv v2 figures. Figure 1 is the original published PNG; figures 2 and 3 use local files verified byte-identical to published sources. Numerical values are not recomputed by this import.",
+  "figures": [
+    {
+      "paper_figure": "1",
+      "title": "HABIT-Bench framework",
+      "source": {
+        "path": "tmp/site-assets/hb_framework.png",
+        "sha256": "3d0b4ef918980c8d90082a43e728a781054ae5e49635d77f5bd6eeae7ed4d002",
+        "bytes": 1633178,
+        "dimensions_px": [
+          4884,
+          3900
+        ]
+      },
+      "caption_source": "sec/3_habit_bench.tex",
+      "published_source": {
+        "url": "https://arxiv.org/src/2610.24520v2",
+        "archive_member": "figures/hb_framework.png",
+        "sha256": "3d0b4ef918980c8d90082a43e728a781054ae5e49635d77f5bd6eeae7ed4d002"
+      },
+      "transform": {
+        "type": "byte-for-byte copy"
+      },
+      "display": {
+        "path": "assets/figures/framework.png",
+        "sha256": "3d0b4ef918980c8d90082a43e728a781054ae5e49635d77f5bd6eeae7ed4d002",
+        "bytes": 1633178,
+        "dimensions_px": [
+          4884,
+          3900
+        ]
+      }
+    },
+    {
+      "paper_figure": "2",
+      "title": "Qwen model-size comparison",
+      "source": {
+        "path": "figures/qwen_scaling_accuracy.png",
+        "sha256": "0c5c9f24c07de571d6aaa95457f0233f06309c8a4abc582b22739eb424a82012",
+        "bytes": 222969,
+        "dimensions_px": [
+          3840,
+          1005
+        ]
+      },
+      "caption_source": "sec/4_experiments.tex",
+      "published_source": {
+        "url": "https://arxiv.org/src/2610.24520v2",
+        "archive_member": "figures/qwen_scaling_accuracy.png",
+        "sha256": "0c5c9f24c07de571d6aaa95457f0233f06309c8a4abc582b22739eb424a82012"
+      },
+      "transform": {
+        "type": "byte-for-byte copy"
+      },
+      "display": {
+        "path": "assets/figures/model-scaling.png",
+        "sha256": "0c5c9f24c07de571d6aaa95457f0233f06309c8a4abc582b22739eb424a82012",
+        "bytes": 222969,
+        "dimensions_px": [
+          3840,
+          1005
+        ]
+      }
+    },
+    {
+      "paper_figure": "3(a)",
+      "title": "Retrieval top-k and ingestion-chunk sensitivity",
+      "source": {
+        "path": "figures/topk_chunk_ablation_2x.pdf",
+        "sha256": "99616553cdf39facd7d40575ed8061da2be9aada4c2c122bf6704ed894f9aa86",
+        "bytes": 28420
+      },
+      "caption_source": "sec/4_experiments.tex",
+      "published_source": {
+        "url": "https://arxiv.org/src/2610.24520v2",
+        "archive_member": "figures/topk_chunk_ablation_2x.pdf",
+        "sha256": "99616553cdf39facd7d40575ed8061da2be9aada4c2c122bf6704ed894f9aa86"
+      },
+      "transform": {
+        "type": "PDF page rasterization; no content edits",
+        "tool": "pdftoppm version 26.05.0",
+        "command": [
+          "pdftoppm",
+          "-f",
+          "1",
+          "-l",
+          "1",
+          "-singlefile",
+          "-png",
+          "-scale-to-x",
+          "2200",
+          "-scale-to-y",
+          "-1",
+          "figures/topk_chunk_ablation_2x.pdf",
+          "assets/figures/retrieval-sensitivity"
+        ]
+      },
+      "original": {
+        "path": "assets/figures/retrieval-sensitivity.pdf",
+        "sha256": "99616553cdf39facd7d40575ed8061da2be9aada4c2c122bf6704ed894f9aa86",
+        "bytes": 28420
+      },
+      "display": {
+        "path": "assets/figures/retrieval-sensitivity.png",
+        "sha256": "0714b6fd793ecd3a1116c7e474357252e9da582d228cffa9ef98ffde2b258c7c",
+        "bytes": 87680,
+        "dimensions_px": [
+          2200,
+          752
+        ]
+      }
+    },
+    {
+      "paper_figure": "3(b)",
+      "title": "Cumulative build/query latency and token usage",
+      "source": {
+        "path": "figures/costs_measured_cohort_2x.pdf",
+        "sha256": "9b08506e54609c11f17a8cc73ffb2dfdd6f69bd669342037980854a6fc15307a",
+        "bytes": 33355
+      },
+      "caption_source": "sec/4_experiments.tex",
+      "published_source": {
+        "url": "https://arxiv.org/src/2610.24520v2",
+        "archive_member": "figures/costs_measured_cohort_2x.pdf",
+        "sha256": "9b08506e54609c11f17a8cc73ffb2dfdd6f69bd669342037980854a6fc15307a"
+      },
+      "transform": {
+        "type": "PDF page rasterization; no content edits",
+        "tool": "pdftoppm version 26.05.0",
+        "command": [
+          "pdftoppm",
+          "-f",
+          "1",
+          "-l",
+          "1",
+          "-singlefile",
+          "-png",
+          "-scale-to-x",
+          "2200",
+          "-scale-to-y",
+          "-1",
+          "figures/costs_measured_cohort_2x.pdf",
+          "assets/figures/efficiency"
+        ]
+      },
+      "original": {
+        "path": "assets/figures/efficiency.pdf",
+        "sha256": "9b08506e54609c11f17a8cc73ffb2dfdd6f69bd669342037980854a6fc15307a",
+        "bytes": 33355
+      },
+      "display": {
+        "path": "assets/figures/efficiency.png",
+        "sha256": "de7ad0266705e91da7a8c1c296ee9a28f98ae903fefbbd5b2e700b260b902758",
+        "bytes": 196258,
+        "dimensions_px": [
+          2200,
+          828
+        ]
+      }
+    }
+  ],
+  "logo": {
+    "source": "User-provided LUMIA-Template/assets/logo.png",
+    "source_sha256": "cbc20e87896a9e25abe2c420dd946248ac6bd0d4a1418e1dbc98cee23e7a4887",
+    "transform": {
+      "type": "byte-for-byte copy"
+    },
+    "output": {
+      "path": "assets/lumia-logo.png",
+      "sha256": "cbc20e87896a9e25abe2c420dd946248ac6bd0d4a1418e1dbc98cee23e7a4887",
+      "bytes": 1162825,
+      "dimensions_px": [
+        1024,
+        1024
+      ]
+    }
+  }
+}
