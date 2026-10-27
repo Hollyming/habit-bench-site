@@ -2,7 +2,7 @@
 
 Public project website for **HABIT-Bench: Evaluating Habit Induction from Longitudinal Weak Evidence in Agent Memory**.
 
-[Website](https://hollyming.github.io/habit-bench-site/) · [Paper](https://arxiv.org/pdf/2610.24520) · [Code & evaluation](https://anonymous.4open.science/r/iclr27_hb_anonymous/README.md) · [Dataset](https://huggingface.co/datasets/hollyming/HABIT-Bench)
+[Website](https://hollyming.github.io/habit-bench-site/) · [Paper](https://arxiv.org/pdf/2610.24520) · [Code & evaluation](https://github.com/LUMIA-Group/habit-bench) · [Dataset](https://huggingface.co/datasets/hollyming/HABIT-Bench)
 
 ## Local preview
 
