@@ -2,7 +2,7 @@
 
 Public project website for **HABIT-Bench: Evaluating Habit Induction from Longitudinal Weak Evidence in Agent Memory**.
 
-[Website](https://hollyming.github.io/habit-bench-site/) · [Paper](https://arxiv.org/pdf/2610.24520) · [Code & evaluation](https://github.com/LUMIA-Group/habit-bench) · [Dataset](https://huggingface.co/datasets/hollyming/HABIT-Bench)
+[Website](https://hollyming.github.io/habit-bench-site/) · [Interactive demo](https://hollyming.github.io/habit-bench-site/demo/) · [Paper](https://arxiv.org/pdf/2610.24520) · [Code & evaluation](https://github.com/LUMIA-Group/habit-bench) · [Dataset](https://huggingface.co/datasets/hollyming/HABIT-Bench)
 
 ## Local preview
 
@@ -22,7 +22,7 @@ The original paper figures (framework, Qwen model-size comparison, retrieval sen
 
 ## Deployment
 
-GitHub Actions publishes `main` at https://hollyming.github.io/habit-bench-site/. Settings → Pages → Source is **GitHub Actions**. The workflow stages the static HTML/CSS/JavaScript files, evidence manifests, `.nojekyll`, and `assets/`.
+GitHub Actions publishes `main` at https://hollyming.github.io/habit-bench-site/. Settings → Pages → Source is **GitHub Actions**. The workflow stages the static HTML/CSS/JavaScript files, evidence manifests, `.nojekyll`, `assets/`, and `demo/`.
 
 ## Files
 
@@ -33,4 +33,5 @@ GitHub Actions publishes `main` at https://hollyming.github.io/habit-bench-site/
 - `evidence.json`: numerical provenance and claim boundaries.
 - `figure-provenance.json`: paper figure and logo source records.
 - `assets/`: logo, paper figures, and original vector PDFs where available.
+- `demo/`: the standalone Habit or Hunch? interactive illustration (authored scenarios, not model evaluation results).
 - `.github/workflows/pages.yml`: automatic GitHub Pages deployment.

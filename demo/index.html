@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f9fb">
+  <meta name="description" content="An interactive illustration of habit induction, context, exceptions, temporal change, and evidence provenance in HABIT-Bench.">
+  <title>Habit or Hunch? | HABIT-Bench interactive demo</title>
+  <link rel="icon" href="./assets/lumia-logo.png" type="image/png">
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./scenarios.js" defer></script>
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#challenge">Skip to the challenge</a>
+  <header class="topbar">
+    <a class="brand" href="../"><img src="./assets/lumia-logo.png" alt="LUMIA" width="52" height="52"><span>HABIT-Bench<span class="brand-sub">← Back to project website</span></span></a>
+    <p class="disclosure">Illustrative scenarios <span>·</span> not model evaluation results</p>
+    <button class="tour-button" id="tour-button" type="button"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m7 4 9 6-9 6z"/></svg><span>Play guided tour</span></button>
+  </header>
+  <main class="shell">
+    <section class="intro" aria-labelledby="page-title"><div><p class="eyebrow">BEYOND RECALL. TOWARD HABIT.</p><h1 id="page-title">Habit <span>or</span> hunch<span class="gold">?</span></h1></div><div class="intro-right"><p>Read the history. Choose the next action.<br>Then see which evidence actually matters.</p><span class="tour-status" id="tour-status" role="status"></span></div></section>
+    <nav class="scene-nav" aria-label="Illustrative scenario"><div id="scene-buttons"></div><span class="scene-counter" id="scene-counter">01 / 05</span></nav>
+    <section class="workspace" id="challenge" aria-label="Evidence and decision challenge">
+      <section class="history-panel" aria-labelledby="history-title"><div class="panel-heading"><div><p class="eyebrow">01 / OBSERVE</p><h2 id="history-title">A few traces. A possible pattern.</h2></div><span class="domain-pill" id="domain-label">Food</span></div><p class="history-note">Authored mini-lifeline · shown in chronological order</p><ol class="timeline" id="timeline"></ol><div class="history-legend"><span class="legend-dot"></span><span id="legend-copy">Reveal the reasoning to trace the relevant evidence.</span></div></section>
+      <section class="decision-panel" aria-labelledby="request-title"><div class="panel-heading"><div><p class="eyebrow">02 / DECIDE</p><h2 id="request-title">What should the agent do?</h2></div><span class="context-badge" id="context-badge">Matching context</span></div><div class="current-request"><span class="request-label">THE NEXT REQUEST</span><p id="request-text"></p><div class="request-tags" id="request-tags"></div></div><p class="choose-label">Choose an action <span>or press 1–4</span></p><div class="choices" id="choices" aria-label="Four possible actions"></div><div class="decision-controls"><button type="button" class="text-button" id="reveal-button">Show reasoning <span aria-hidden="true">↗</span></button><button type="button" class="text-button" id="reset-button">Try again <span aria-hidden="true">↺</span></button></div></section>
+    </section>
+    <section class="lens-panel" id="lens-panel" aria-labelledby="lens-title" aria-live="polite"><div class="lens-icon" aria-hidden="true"><svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="15" cy="15" r="9"/><path d="m22 22 8 8M10 15h10M15 10v10"/></svg></div><div class="lens-copy"><p class="eyebrow" id="lens-kicker">03 / TRACE THE DECISION</p><h2 id="lens-title">A useful memory keeps the conditions.</h2><p id="lens-text">A repeated behavior is evidence for a scoped default. Context, exceptions, time, and endorsement determine the next action.</p></div><div class="lens-action"><span id="decision-tag">Your decision comes first</span><button type="button" id="next-button">Next case <span aria-hidden="true">→</span></button></div></section>
+    <footer><p>Five decisions. Three synthetic mini-lifelines. One question: <strong>when should a habit apply?</strong></p><div><a href="https://arxiv.org/pdf/2610.24520" target="_blank" rel="noopener noreferrer">Paper ↗</a><a href="https://github.com/LUMIA-Group/habit-bench" target="_blank" rel="noopener noreferrer">Code ↗</a><a href="https://huggingface.co/datasets/hollyming/HABIT-Bench" target="_blank" rel="noopener noreferrer">Dataset ↗</a></div></footer>
+  </main>
+</body>
+</html>
